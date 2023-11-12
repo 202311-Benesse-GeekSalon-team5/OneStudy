@@ -8,10 +8,10 @@
 <div class="boards-container">
 <% @boards.each do |t| %>
     <div class="board">
+        <%= t.user.name %>
         <b><%= t.title %></b>
         <p><%= t.subject %>
         <%= t.grade %></p>
-        <%= t.body %>
         <%= t.created_at %>
         <%= link_to "詳細へ", board_path(t.id) %>
         <%= link_to "編集する", edit_board_path(t.id) %>
