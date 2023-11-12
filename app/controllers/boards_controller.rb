@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+    before_action :authenticate_user!
     def index
         @boards = Board.all
     end
@@ -9,6 +10,8 @@ class BoardsController < ApplicationController
 
     def create
         board = Board.new(board_params)
+        board.user_id = current_user.id
+        
         if board.save
             redirect_to :action => "index"
         else
@@ -25,9 +28,9 @@ class BoardsController < ApplicationController
     end
 
     def update
-        board = Board.find(params[:id])
-        if Board.update(board_params)
-            redirect_to :action => "show", :id => board.id
+        @board = Board.find(params[:id])
+        if @board.update(board_params)
+            redirect_to :action => "show", :id => @board.id
         else
             redirect_to :action => "new"
         end
