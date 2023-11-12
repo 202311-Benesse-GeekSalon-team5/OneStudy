@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+ .school_info dl{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+ }
+ .school_info dt{
+  width: 10%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+ }
+ .school_info dd{
+  width: 85%;
+ }
+ .overview dd{
+  text-align: left;
+  margin-left: 1vh;
+ }
+ .school_info p img{
+  width: 400px !important;
+  height: 80px !important;
+ }
+ .school_info p {
+  width: 100%;
+ }
+ .box{
+  display: flex;
+  width: auto;
+ }
+.box dt{
+  border: 1px dotted; 
+  width: 25%;
+}
+#blue{
+  background-color: rgb(132, 132, 225);
+}
+ @media(max-width: 850px){
+  .school_info dl{
+    width: 220px;
+  }
+  .school_info dt{
+    width: 60px;
+  }
+  .school_info dd{
+    width: 120px;
+  }
+ }
+ 
